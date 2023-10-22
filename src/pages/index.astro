@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro"
+import Nav from "../components/Nav.astro"
+import Visual from "../components/Visual.astro";
+
+---
+<Layout title="Nivek Studio">
+	<Nav />
+	<main class="relative w-full h-screen overflow-auto lg:snap-y lg:snap-mandatory">
+<!--<div class="snap-center">
+			<Header/>
+		</div>-->
+		<div class="snap-center">
+			<Visual/>
+		</div>
+		
+	</main>
+</Layout>
+

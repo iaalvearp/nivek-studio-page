@@ -1,0 +1,17 @@
+---
+const {title, info, src, href, alt} = Astro.props;
+---
+
+
+<article class="w-full h-72 mb-3">
+    <div class="relative flex flex-col">
+        <picture>
+            <img src={src} alt={alt}>
+        </picture>
+        <a href={href} class="absolute h-full w-full"></a>
+        <div class="p-3 bg-[#455858]/30 rounded-b-lg text-center">
+            <h2 class="text-2xl text-[#455858] font-semibold">{title}</h2>
+            <p>{info}</p>
+        </div>
+    </div>
+</article>

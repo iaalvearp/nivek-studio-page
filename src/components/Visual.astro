@@ -1,0 +1,44 @@
+---
+import GalleryCard from "./GalleryCard.astro";
+---
+
+<section class="relative flex flex-col-reverse justify-center items-center h-screen w-full">
+    <div class="relative h-2/5 w-full lg:w-2/4 p-5" id="left-side">
+        <a href="#home">
+            <svg width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-4.98 3.66l-.163 .01l-.086 .016l-.142 .045l-3d.113 .054l-.07 .043l-.095 .071l-.058 .054l-4 4l-.083 .094a1 1 0 0 0 1.497 1.32l2.293 -2.293v5.586l.007 .117a1 1 0 0 0 1.993 -.117v-5.585l2.293 2.292l.094 .083a1 1 0 0 0 1.32 -1.497l-4 -4l-.082 -.073l-.089 -.064l-.113 -.062l-.081 -.034l-.113 -.034l-.112 -.02l-.098 -.006z" stroke-width="0" fill="currentColor"></path>
+             </svg>
+        </a>
+    </div>
+    <div class="absolute flex flex-col h-full px-5 top-20 lg:w-2/4 lg:grid" id="right-side">
+        <GalleryCard
+        src="/branding.png"
+        href="#"
+        title="Branding"
+        info="Crea tu marca desde cero con una guía profesional."
+        ></GalleryCard>
+        
+        <GalleryCard
+        src="/graphic-desing.png"
+        href="#"
+        title="Graphic Design"
+        info="Impulsa tu marca con una línea gráfica única y elegante hecha por profesionales."
+        ></GalleryCard>
+
+        <GalleryCard
+        src="/photography.png"
+        href="#"
+        title="Photography & Video"
+        info="Elementos visuales de alta calidad para todas la ocasiones."
+        ></GalleryCard>
+
+        <GalleryCard
+        src="/3d.png"
+        href="#"
+        title="Modelado 3D"
+        info="Renders realistas para cada proyecto."
+        ></GalleryCard>
+
+    </div>
+</section>

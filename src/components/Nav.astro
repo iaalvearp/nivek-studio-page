@@ -1,0 +1,100 @@
+---
+import Link from "./Link.astro";
+
+---
+
+
+<!--<img src="https://nivekstudio.com/1.1770e3b3.jpg" alt="laptop-desktop">-->
+<!--<img src="https://nivekstudio.com/nbrands/img/nbrands-img-06.png" alt="pymes-emprendedores">-->
+<!--<img src="https://nivekstudio.com/2.07ca36b5.jpg" alt="presentation-cards">-->
+<!--Vídeo de <a href="https://pixabay.com/es/users/life-of-vids-1282862/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=3132">Life-Of-Vids</a> de <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=3132">Pixabay</a> -->
+
+<script>
+    const toggleClosed = document.getElementById('toggleClosed');
+    const toggleOpen = document.getElementById('toggleOpen');
+    const navMenu = document.getElementById('navMenu');
+
+    toggleClosed.addEventListener('click', ()=>{
+        toggleClosed.classList.replace('scale-100','scale-0');
+        toggleClosed.classList.replace('opacity-100','opacity-0');
+        toggleOpen.classList.replace('scale-0','scale-100');
+        toggleOpen.classList.replace('opacity-0','opacity-100');
+        navMenu.classList.replace('translate-x-full','translate-x-0')
+        
+    });
+    toggleOpen.addEventListener('click', ()=>{
+        toggleOpen.classList.replace('scale-100','scale-0');
+        toggleOpen.classList.replace('opacity-100','opacity-0');
+        toggleClosed.classList.replace('scale-0','scale-100');
+        toggleClosed.classList.replace('opacity-0','opacity-100');
+        navMenu.classList.replace('translate-x-0','translate-x-full')
+    })
+    
+</script>
+
+
+<header class="h-20 flex justify-center w-full sm:justify-between items-center fixed sm:inset-0 px-4 py-2 z-50">
+    <figure class="hidden sm:flex h-full sm:w-[200px] lg:flex-grow lg:basis-0">
+        <img src="/logo.svg" alt="" class="h-full lg:w-[200px] py-4">
+    </figure>
+    <figure class="h-20 w-full fixed flex justify-center items-center sm:hidden z-50"> <!--relative h-full w-full -->
+        <img id="toggleOpen" class="h-20 fixed mx-auto scale-0 opacity-0 duration-200 py-2 px-3 z-50" src="/logo.svg" alt="logo"><!-- h-full absolute inset-0 m-auto -->
+        <img id="toggleClosed" class="h-14 fixed sm:hidden mx-auto scale-100 opacity-100 duration-200  z-50" src="https://nivekstudio.com/nbrands/img/isotipo-nivekstudio-03.png" alt="iso-logo"><!-- h-full absolute inset-0 m-auto -->
+    </figure>
+    <nav id="navMenu" class="fixed sm:hidden inset-0 bg-gradient-to-b from-white/70 to-black/70 translate-x-full transition-transform duration-200 z-40">
+        <ul class="absolute inset-x-0 top-24 p-12 bg-white w-[90%] mx-auto rounded-md h-max text-center grid gap-6 font-bold text-current shadow-2xl">
+            <li>
+                <a href="">Visual</a>
+            </li>
+            <li>
+                <a href="">Marketing</a>
+            </li>
+            <li>
+                <a href="">Eventos</a>
+            </li>
+            <li>
+                <a href="">Web</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="hidden sm:flex justify-center items-center">
+        <ul class="flex justify-center">
+            <Link href="#" >Visual<Link/>
+            <Link href="#" >Marketing<Link/>
+            <Link href="#" >Eventos<Link/>
+            <Link href="#" >Web<Link/>
+        </ul>
+    </nav>
+    <nav class="hidden xl:flex flex-grow basis-0 justify-end pr-3">
+        <ul class="flex">
+            <li class="p-1">
+                <a href="https://www.instagram.com/nivekstudio">
+                    <svg class="block hover:-translate-y-1 hover:scale-110 duration-200 hover:shadow-2xl hover:text-[#9E37B8]" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                        <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                </a>
+            </li>
+            <li class="p-1">
+                <a href="https://www.facebook.com/nivek.ec">
+                    <svg class="block hover:-translate-y-1 hover:scale-110 duration-200 hover:shadow-2xl hover:text-[#1877f2]" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                     </svg>
+                </a>
+            </li>
+            <li class="p-1">
+                <a href="#">
+                    <svg class="block hover:-translate-y-1 hover:scale-110 duration-200 hover:shadow-2xl hover:text-[#C5221F]" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                        <path d="M3 7l9 6l9 -6"></path>
+                     </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+

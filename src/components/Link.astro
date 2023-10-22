@@ -1,0 +1,23 @@
+---
+const {href} = Astro.props;
+---
+
+
+<li class="relative flex justify-center items-center h-10 overflow-hidden">
+    <span class="absolute rounded-e-full bg-transparent w-full h-full -translate-x-full duration-300 z-0"></span>
+    <a class="h-full cursor-pointer flex items-center z-20 font-medium xl:text-xl text-current py-2 pl-1 pr-[6px]" href={href}>
+        <slot/>
+    </a>
+</li>
+
+<style>
+    li:hover>span{
+        width: 100%;
+        height: 100%;
+        transform: translateY(0);
+        background-color: #455858;
+    }
+    li:hover>a{
+        color: white;
+    }
+</style>
