@@ -1,0 +1,12 @@
+---
+const {title} = Astro.props;
+---
+
+<div class="cardDiv h-12 rounded-l-3xl pr-3 rounded-r grid grid-cols-[80px_1fr] content-center z-10 bg-white shadow-xl duration-300 active:scale-90 active:shadow-none cursor-pointer my-5">
+    <i class="bgIcon h-20 w-20 rounded-full bg-white flex justify-center items-center z-0 shadow-xl duration-300"> 
+        <slot>
+    </i>
+    <div class="cardText col-start-2 flex items-center z-20">  
+      <h2 class="text-lg">{title}</h2>
+    </div>
+</div>

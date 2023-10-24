@@ -5,7 +5,6 @@ import Link from "./Link.astro";
 
 
 <!--<img src="https://nivekstudio.com/1.1770e3b3.jpg" alt="laptop-desktop">-->
-<!--<img src="https://nivekstudio.com/nbrands/img/nbrands-img-06.png" alt="pymes-emprendedores">-->
 <!--<img src="https://nivekstudio.com/2.07ca36b5.jpg" alt="presentation-cards">-->
 <!--Vídeo de <a href="https://pixabay.com/es/users/life-of-vids-1282862/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=3132">Life-Of-Vids</a> de <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=3132">Pixabay</a> -->
 
@@ -44,25 +43,29 @@ import Link from "./Link.astro";
     <nav id="navMenu" class="fixed sm:hidden inset-0 bg-gradient-to-b from-white/70 to-black/70 translate-x-full transition-transform duration-200 z-40">
         <ul class="absolute inset-x-0 top-24 p-12 bg-white w-[90%] mx-auto rounded-md h-max text-center grid gap-6 font-bold text-current shadow-2xl">
             <li>
-                <a href="">Visual</a>
+                <a href="/index">Home</a>
             </li>
             <li>
-                <a href="">Marketing</a>
+                <a href="#visual">Visual</a>
             </li>
             <li>
-                <a href="">Eventos</a>
+                <a href="#marketing">Marketing</a>
             </li>
             <li>
-                <a href="">Web</a>
+                <a href="#events">Eventos</a>
+            </li>
+            <li>
+                <a href="#web">Web</a>
             </li>
         </ul>
     </nav>
     <nav class="hidden sm:flex justify-center items-center">
         <ul class="flex justify-center">
-            <Link href="#" >Visual<Link/>
-            <Link href="#" >Marketing<Link/>
-            <Link href="#" >Eventos<Link/>
-            <Link href="#" >Web<Link/>
+            <Link href="/" >Home<Link/>
+            <Link href="#visual" >Visual<Link/>
+            <Link href="#marketing" >Marketing<Link/>
+            <Link href="#eventos" >Eventos<Link/>
+            <Link href="#web" >Web<Link/>
         </ul>
     </nav>
     <nav class="hidden xl:flex flex-grow basis-0 justify-end pr-3">

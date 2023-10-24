@@ -1,0 +1,25 @@
+---
+const {title, info, href, textBtn} = Astro.props;
+---
+<section class="flex justify-center">
+    <div class="w-80 relative grid grid-cols-5 py-4 pr-4 pl-8 items-center ">
+        <picture class="absolute h-20 lg:h-full w-20 lg:w-full duration-300 z-20 lg:z-30 bg-[#455858] text-white flex items-center justify-center">
+            <slot>
+        </picture>
+        <h3 class="col-start-2 col-end-6 z-20 ml-1 text-xl font-semibold">{title}</h3>
+        <p class="col-start-2 col-end-6 z-20 ml-1 mb-1">{info}</p>
+        <a class="col-start-2 col-end-6 h-7 w-20 bg-[#455858] hover:bg-white text-white hover:text-[#455858] hover:outline-[#455858] hover:outline-2 hover:outline duration-300 text-sm font-light flex justify-center items-center rounded z-20 ml-1" href={href}>{textBtn}</a>
+        <span class="col-start-1 bg-[#455858]/40 w-full h-full absolute z-10"></span>
+    </div>
+</section>
+
+<style>
+    section:hover>div>picture{
+        height: 80px;
+        width: 80px;
+        cursor: ;
+    }
+    section:hover{
+        cursor: default;
+    }
+</style>

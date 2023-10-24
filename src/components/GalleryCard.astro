@@ -3,13 +3,13 @@ const {title, info, src, href, alt} = Astro.props;
 ---
 
 
-<article class="w-full h-72 mb-3">
-    <div class="relative flex flex-col">
-        <picture>
-            <img src={src} alt={alt}>
+<article class="w-full max-h-60 my-3 px-3">
+    <div class="relative grid grid-cols-4">
+        <picture class="min-h-32 overflow-hidden">
+            <img src={src} alt={alt} class="col-start-1 col-end-2 h-full object-cover object-left">
         </picture>
         <a href={href} class="absolute h-full w-full"></a>
-        <div class="p-3 bg-[#455858]/30 rounded-b-lg text-center">
+        <div class="p-3 bg-[#455858]/20 rounded-r-lg h-full col-start-2 col-end-5 ">
             <h2 class="text-2xl text-[#455858] font-semibold">{title}</h2>
             <p>{info}</p>
         </div>
