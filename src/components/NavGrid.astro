@@ -1,0 +1,123 @@
+---
+
+---
+
+<script>
+
+</script>
+
+<div class="navContainer">
+    <nav>
+        <div class="navLogo">
+            <a href="#">
+                Logo
+            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">About Us</a>
+            </li>
+        </ul>
+        <div class="btnDiv">
+            <svg id="openBtn" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 6l16 0"></path>
+                <path d="M4 12l16 0"></path>
+                <path d="M4 18l16 0"></path>
+                </svg>
+            <svg id="closeBtn" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M18 6l-12 12"></path>
+                <path d="M6 6l12 12"></path>
+                </svg>
+        </div>
+        <div class="callToAction">
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<style>
+    
+
+
+    @media (max-width: 48rem) {
+        .navContainer{
+            display: grid;
+            grid-column: 1/-1;
+            grid-row: 1/2;
+            grid-template-columns: var(--margin-mobile) 1fr var(--margin-mobile);
+            z-index: 2;
+            background-color: var(--hover-gradient);
+            backdrop-filter: blur(0.5rem);
+        }
+        nav {
+            display: grid;
+            grid-column: 2/3;
+            grid-row: 1/2;
+            height: 5rem;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0.75rem 0 0.5rem 0;
+            align-items: center;
+        }
+        #menu{
+            position: absolute;
+            inset: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 1;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            background-color: var(--secundary-color);
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 500;
+            transform: translateX(100%);
+            transition: transform 500ms;
+        }
+        #menu li {
+            width: 100%;
+        }
+        #menu li a{
+            display: block;
+            padding: 1rem 0;
+            width: 100%;
+        }
+        .navLogo{
+            font-size: 2.25rem; /* 36px */
+            grid-row: 1/2;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .btnDiv{
+            position: relative;
+            height: 2.25rem;
+            width: 2.25rem;
+            grid-row: 1/2;
+            z-index: 2;
+        }
+        #openBtn, #closeBtn {
+            position: absolute;
+            transition: transform 300ms;
+        }
+        #openBtn{
+            transform: scale(1);
+        }
+        #closeBtn {
+            transform: scale(0);
+        }
+        .callToAction{
+            display: none;
+        }
+        
+    }
+</style>
