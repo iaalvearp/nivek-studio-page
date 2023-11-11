@@ -1,0 +1,81 @@
+---
+import NavGrid from "./NavGrid.astro";
+---
+
+<script>
+
+</script>
+
+<header class="sectionContainer" id="home">
+    <NavGrid></NavGrid>
+    <div class="headerTexts">
+        <div>
+            <h1 class="mainTitle">
+                Nivek <strong class="strongText">Studio</strong>
+            </h1>
+            <p class="headerInfo">
+                Lorem ipsum dolor sit amet, consectetur <strong class="strongText">marca</strong> elit. Nobis blanditiis quo possimus.
+            </p>
+        </div>
+        <div class="btnContainer">
+            <a class="callToAction" href="#">Contact</a>
+        </div>
+    </div>
+    <div class="videoContainer">
+        <video autoplay muted loop src="/homeBg.mp4"></video>
+    </div>
+</header>
+
+<style>
+    :root{
+		--margin-mobile: 5%;
+		--margin-desktop: 10%;
+	}
+
+
+
+	@media (max-width: 48rem) {
+		.sectionContainer{
+			display: grid;
+			height: 100%;
+			min-height: 100dvh;
+			width: 100%;
+			grid-template-columns: var(--margin-mobile) 1fr var(--margin-mobile);
+			grid-template-rows: 5rem 1fr;
+			overflow: hidden;
+		}
+		.headerTexts{
+			grid-row: 2/-1;
+			grid-column: 2/3;
+			z-index: 1;
+			display: grid;
+			align-items: center;
+			justify-items: center;
+			text-align: center;
+		}
+		.strongText{
+			color: var(--primary-color-two);
+		}
+		.callToAction{
+			padding: 0.5rem 1rem;
+			border: 0.125rem solid var(--primary-color-two);
+			border-radius: 0.25rem;
+			background-color: var(--primary-overlay-two);
+            backdrop-filter: blur(0.25rem);
+			color: var(--primary-color-two);
+			display: block;
+		}
+		.videoContainer{
+			grid-column: 1/-1;
+			grid-row: 1/-1;
+			z-index: 0;
+		}
+		video{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: right;
+		}
+		
+	}
+</style>
