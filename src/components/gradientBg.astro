@@ -1,0 +1,74 @@
+---
+
+---
+
+<script>
+
+</script>
+
+<div class="gradient_container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+
+<style>
+    .gradient_container{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        margin: auto;
+        overflow: hidden;
+        z-index: 0;
+    }
+    .gradient_container div{
+        position: absolute;
+        border-radius: 50%;
+        animation: gradient 3s infinite;
+    }
+    @keyframes gradient{
+        70%{
+            transform: scale(1.2) translate(50px);
+        }
+    }
+    .gradient_container div:nth-child(1){
+        height: 90%;
+        width: 80%;
+        background-color: #ff057c;
+        left: -20%;
+        top: -10%;
+    }
+    .gradient_container div:nth-child(2){
+        height: 80%;
+        width: 70%;
+        background-color: #1619b9;
+        top: -12%;
+        right: -12%;
+        animation-delay: 2s;
+    }
+    .gradient_container div:nth-child(3){
+        height: 65%;
+        width: 80%;
+        background-color: #800f86;
+        bottom: -15%;
+        right: -20%;
+        animation-delay: 0.3s;
+    }
+    .gradient_container div:nth-child(4){
+        height: 50%;
+        width: 75%;
+        background-color: #1ba8e9;
+        bottom: -10%;
+        left: -18%;
+        animation-delay: 1.2s;
+    }
+    .gradient_container:after{
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(80px);
+    }
+</style>

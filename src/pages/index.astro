@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderGrid from '../components/HeaderGrid.astro';
 import SectionGrid from '../components/SectionGrid.astro';
+import HeaderCreative from '../components/HeaderCreative.astro';
+import NavGrid from '../components/NavGrid.astro';
 
 ---
 <script>
@@ -11,11 +13,16 @@ import SectionGrid from '../components/SectionGrid.astro';
 
 <Layout title="Nivek Studio">
 	<main>
-		<HeaderGrid></HeaderGrid>
+		<NavGrid></NavGrid>
+
+		<HeaderCreative></HeaderCreative>
+		
 		<SectionGrid></SectionGrid>
 	</main>
 </Layout>
 
 <style>
-	
+	main{
+		overflow: hidden;
+	}
 </style>

@@ -3,14 +3,39 @@
 ---
 
 <script>
+    const openBtn = document.getElementById('openBtn');
+	const closeBtn = document.getElementById('closeBtn');
+	const menu = document.getElementById('menu');
 
+	const openMenu = () =>{
+		closeBtn.style.transform = 'scale(1)';
+		closeBtn.style.color = 'var(--secundary-color)';
+		openBtn.style.transform = 'scale(0)';
+		menu.style.transform = 'scale(1, 1)';
+	}
+	const closeMenu = () =>{
+		openBtn.style.transform = 'scale(1)';
+		closeBtn.style.transform = 'scale(0)';
+		closeBtn.style.color = 'var(--primary-color-two)';
+		menu.style.transform = 'scale(0, 1)';
+
+	}
+
+	openBtn.addEventListener('click', openMenu);
+	closeBtn.addEventListener('click', closeMenu);
+	menu.addEventListener('click', ()=>{
+		if(closeBtn.style.transform === 'scale(1)' && openBtn.style.transform === 'scale(0)')
+		{
+			closeMenu();
+		}
+	});
 </script>
 
 <div class="navContainer">
     <nav>
         <div class="navLogo">
-            <a id="textLogo" href="#">
-                Logo
+            <a href="#">
+                <img class="navPic" src="./webLogo.png" alt="">
             </a>
         </div>
         <ul id="menu">
@@ -44,7 +69,64 @@
 </div>
 
 <style>
-    
+    .navContainer{
+        position: absolute;
+        z-index: 2;
+        height: 5rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: var(--margin-desktop) 1fr var(--margin-desktop);
+    }
+    nav{
+        grid-column: 2/3;
+        height: 5rem;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 3fr 1fr;
+        align-items: center;
+    }
+    .navLogo{
+        height: 5rem;
+    }
+    .navPic{
+        height: 100%;
+    }
+    #menu{
+        display: grid;
+        grid-auto-flow: column;
+        transform: scale(1);
+        justify-content: center;
+        column-gap: 1rem;
+    }
+    #menu li a{
+        font-size: 1.25rem;
+        font-weight: 700;
+        transition: color 500ms;
+    }
+    #menu li a:hover{
+        color: var(--primary-color-two);
+        font-size: 1.25rem;
+    }
+    .btnDiv{
+        display: none;
+    }
+    .callToAction{
+        display: grid;
+        justify-content: end;
+    }
+    .callToAction a{
+        padding: 0.5rem 1rem;
+        background-color: var(--primary-color-two);
+        border-radius: 0.5rem;
+        color: var(--secundary-color);
+        transition: transform 400ms;
+    }
+    .callToAction a:hover{
+        transform: scale(1.04);
+    }
+    .callToAction a:active{
+        transform: scale(0.9);
+    }
     :root{
 		--margin-mobile: 5%;
 		--margin-desktop: 10%;
@@ -57,11 +139,8 @@
             grid-row: 1/2;
             height: 5rem;
             width: 100%;
-            position: fixed;
-            z-index: 3;
+            z-index: 4;
             grid-template-columns: var(--margin-mobile) 1fr var(--margin-mobile);
-            background-color: var(--primary-overlay-two);
-            backdrop-filter: blur(0.5rem);
         }
         nav{
             grid-column: 2/3;
@@ -72,22 +151,27 @@
             align-items: center;
         }
         .navLogo{
-            font-size: 2rem;
-            z-index: 5;
+            padding: 1rem 0;
+            height: 5rem;
         }
-        #textLogo{
-            color: var(--primary-color-two);
-            transition: color 500ms;
+        .navPic{
+            height: 100%;
+            width: auto;
+            position: relative;
+            z-index: 6;
         }
         .btnDiv{
             height: 2.5rem;
             width: 2.5rem;
             position: relative;
+            z-index: 5;
         }
         #openBtn, #closeBtn {
             position: absolute;
             transition: transform color 400ms;
-            color: var(--primary-color-two);
+            color: var(--secundary-color);
+            cursor: pointer;
+            display: block;
         }
         #openBtn{
             transform: scale(1);
@@ -107,8 +191,9 @@
             text-align: center;
             background-color: var(--primary-color-two);
             justify-items: center;
-            transform: translateX(100%);
+            transform: scale(0, 1);
             transition: transform 400ms;
+            z-index: 5;
         }
         #menu li {
             height: max-content;
@@ -120,9 +205,11 @@
             font-weight: 500;
             display: block;
             padding: 1rem 2rem;
+            transition: color 400ms;
         }
         .callToAction{
             display: none;
         }
+        
     }
 </style>

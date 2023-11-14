@@ -7,34 +7,7 @@ const { title } = Astro.props;
 ---
 
 <script>
-	const openBtn = document.getElementById('openBtn');
-	const closeBtn = document.getElementById('closeBtn');
-	const menu = document.getElementById('menu');
-	const navLogo = document.getElementById('textLogo');
-
-	const openMenu = () =>{
-		closeBtn.style.transform = 'scale(1)';
-		closeBtn.style.color = 'var(--secundary-color)';
-		navLogo.style.color = 'var(--secundary-color)';
-		openBtn.style.transform = 'scale(0)';
-		menu.style.transform = 'translateX(0)';
-	}
-	const closeMenu = () =>{
-		openBtn.style.transform = 'scale(1)';
-		closeBtn.style.transform = 'scale(0)';
-		closeBtn.style.color = 'var(--primary-color-two)';
-		navLogo.style.color = 'var(--primary-color-two)';
-		menu.style.transform = 'translateX(100%)';
-	}
-
-	openBtn.addEventListener('click', openMenu);
-	closeBtn.addEventListener('click', closeMenu);
-	menu.addEventListener('click', ()=>{
-		if(closeBtn.style.transform === 'scale(1)' && openBtn.style.transform === 'scale(0)')
-		{
-			closeMenu();
-		}
-	});
+	
 </script>
 
 <!doctype html>
@@ -65,14 +38,17 @@ const { title } = Astro.props;
 		--current-color: #333;
 		--secundary-color: #FFF;
 		--light-overlay: rgb(255 255 255 / 30%);
+
+		--border-radius: 0.25rem;
 	}
 
 	*{
-		font-family: 'Poppins',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family: 'Poppins', sans-serif, -apple-system,system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 		text-decoration: none;
 		list-style: none;
+		color: var(--current-color);
 	}
 </style>
